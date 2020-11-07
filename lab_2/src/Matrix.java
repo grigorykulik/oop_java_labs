@@ -13,7 +13,7 @@ public class Matrix {
 
     public Element[][] mtrx=new Element[rows][columns];
 
-    public Matrix(String filename) throws FileNotFoundException {
+    public Matrix(String filename) {
 
         //Initialize elements in mtrx
         for (int i=0; i<rows; i++){

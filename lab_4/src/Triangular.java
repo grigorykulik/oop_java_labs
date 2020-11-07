@@ -1,5 +1,9 @@
 public class Triangular {
     private Point a, b, c;
+    public double sideA;
+    public double sideB;
+    public double sideC;
+
 
     public Triangular() {};
 
@@ -7,10 +11,13 @@ public class Triangular {
         this.a = a;
         this.b = b;
         this.c = c;
+        sideA=getSide(a, b);
+        sideB=getSide(b, c);
+        sideC=getSide(a, c);
 
-        if (getSide(a, b)+getSide(b, c)<getSide(a, c) ||
-        getSide(b, c)+getSide(a, c)<getSide(a, b) ||
-        getSide(a, c)+getSide(a, b)<getSide(b, c)) throw new ImpossibleTriangularException();
+        if (sideA+sideB<=sideC ||
+                sideB+sideC<=sideA ||
+                sideC+sideA<=sideB) throw new ImpossibleTriangularException();
     }
 
     public double getSide(Point one, Point two) {
@@ -22,18 +29,15 @@ public class Triangular {
     }
 
     public double getPerimeter() {
-        double perimeter=getSide(this.a, this.b)+
-                getSide(this.b, this.c)+
-                getSide(this.c, this.a);
+        double perimeter=sideA+sideB+sideC;
 
         return perimeter;
     }
 
     public double getArea() {
+
         double hp=this.getPerimeter()/2;
-        double area=Math.sqrt(hp*(hp-this.getSide(this.a, this.b)*
-                (hp-this.getSide(this.b, this.c)*
-                        (hp-this.getSide(this.c, this.a)))));
+        double area=Math.sqrt(hp*(hp-sideA)*(hp-sideB)*(hp-sideC));
 
         return area;
     }

@@ -36,11 +36,14 @@ public class Main {
         for (int i=0; i<s.size(); i++) {
             if (s.get(i).length()==3) {
                 char oldChar = s.get(i).charAt(1);
+                char oldChar2 = s.get(i).charAt(0);
+                char oldChar3 = s.get(i).charAt(2);
+
 
                 do {
                     newCharCode = r.nextInt(max - min) + min;
                 }
-                while (newCharCode==(int)oldChar);
+                while (newCharCode==(int)oldChar && newCharCode==(int)oldChar2 && newCharCode==(int)oldChar3);
 
                 char newChar = (char) newCharCode;
                 String newPart = s.get(i).replace(oldChar, newChar);

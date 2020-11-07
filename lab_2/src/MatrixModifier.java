@@ -1,11 +1,6 @@
-import javax.xml.transform.Result;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 import java.util.NoSuchElementException;
-
-import static java.util.stream.Collectors.toList;
 
 public class MatrixModifier {
     private Matrix m;
@@ -41,7 +36,7 @@ public class MatrixModifier {
         removeRow(min.getRow());
     }
 
-    /** find the minimum in the given row **/
+    /** find the maximum in the given row **/
     public Element getMaxInARow(int k) {
         ArrayList<Element> aux=new ArrayList<Element>();
 
