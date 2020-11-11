@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //print the original array
         System.out.println("Original array");
         System.out.println(Arrays.toString(originalArray));
 
@@ -17,6 +18,7 @@ public class Main {
             shuffle();
         }
 
+        //print the shuffled array
         System.out.println("Shuffled array");
         System.out.println(Arrays.toString(shuffledArray));
     }

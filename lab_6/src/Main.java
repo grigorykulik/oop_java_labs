@@ -59,12 +59,25 @@ public class Main {
                         try {
                             System.out.println("Enter the file name you want to append to. If the file does not exist, it will be created");
                             path = br.readLine();
-                            appendToFile(path);
+                            appendToFile(path, true);
                         }
 
                         catch (IOException e) {
                             System.out.println("Could not write to a file");
                         }
+                        break;
+
+                    case "rewrite":
+                        try {
+                            System.out.println("Enter the file name you want to rewrite. If the file does not exist, it will be created");
+                            path = br.readLine();
+                            appendToFile(path, false);
+                        }
+
+                        catch (IOException e) {
+                            System.out.println("Could not write to a file");
+                        }
+
                         finally {
                             break;
                         }
@@ -118,8 +131,8 @@ public class Main {
         }
     }
 
-    public static void appendToFile(String path) throws IOException {
-        FileWriter fr=new FileWriter(path, true);
+    public static void appendToFile(String path, boolean apNeeded) throws IOException {
+        FileWriter fr=new FileWriter(path, apNeeded);
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Enter a string to append to the file");
@@ -134,5 +147,8 @@ public class Main {
         }
 
     }
+
+
+
 }
 

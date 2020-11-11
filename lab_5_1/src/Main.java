@@ -8,8 +8,11 @@ import java.util.Stack;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Stack> arr=new ArrayList<>();
-
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+
+        /**read user input, call reverseInteger method, receive a stack of characters, add them
+         * to the arraylist of stacks
+        */
 
         do {
             try {
@@ -35,6 +38,7 @@ public class Main {
 
     }
 
+    //convert an int to a stack of characters
     public static Stack<Character> reverseInteger (int x) {
         Stack<Character> stack = new Stack<>();
             String sN=Integer.toString(x);
@@ -45,5 +49,5 @@ public class Main {
                 }
 
             return stack;
-        }
+    }
 }
