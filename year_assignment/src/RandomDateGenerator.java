@@ -15,4 +15,12 @@ public class RandomDateGenerator {
         gc.add(Calendar.MINUTE, randMinute);
         return gc.getTime();
     }
+
+    public static Date generateRandomActualArrival(Date d) {
+        GregorianCalendar gc=new GregorianCalendar();
+        gc.setTime(d);
+        int randomDeviation=(int)(Math.random()*16-7);
+        gc.add(Calendar.DAY_OF_MONTH, randomDeviation);
+        return gc.getTime();
+    }
 }
